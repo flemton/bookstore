@@ -1,5 +1,3 @@
-import { Router } from 'react-router-dom';
-
 const Books = () => (
     <div>
         Books
