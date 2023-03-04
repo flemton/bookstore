@@ -8,6 +8,9 @@ const links = [
 
 const Navbar = () => (
   <nav className="nav">
+    <h1>
+      Bookstore CMS
+    </h1>
     <ul>
       {links.map((link) => (
         <li key={link.text}>
@@ -17,3 +20,5 @@ const Navbar = () => (
     </ul>
   </nav>
 );
+
+export default Navbar;
