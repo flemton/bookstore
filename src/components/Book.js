@@ -1,27 +1,29 @@
-const Book = ({ prop }) => {
+const Book = ( props ) => {
+    const { category, title, author, progress } = props;
+
     return (
-        <div >
-            <div >
-                <p >{prop.category}</p>
-                <h1>{prop.title}</h1>
-                <p >{prop.author}</p>
-                <ul >
+        <div className='book'>
+            <div className="book-details">
+                <p >{category}</p>
+                <h2 className="title">{title}</h2>
+                <p className="author">{author}</p>
+                <ul className="book-action">
                     <li>Comments</li>
                     <li >Remove</li>
                     <li >Edit</li>
                 </ul>
             </div>
             <div >
-                <div />
+                <div className="oval"/>
                 <div >
-                    <h2 >{prop.progress}</h2>
+                    <h3 >{progress}</h3>
                     <p >completed</p>
                 </div>
             </div>
             <div >
                 <p>CURRENT CHAPTER</p>
-                <p >{prop.current}</p>
-                <button type="button">UPDATE PROGRESS</button>
+                <p >Current</p>
+                <button type="button" className="progress-update">UPDATE PROGRESS</button>
             </div>
         </div>
     );
