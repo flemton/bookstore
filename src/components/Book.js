@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Book = (props) => {
   const {
     category, title, author, progress, chapter,
@@ -29,6 +31,14 @@ const Book = (props) => {
       </div>
     </div>
   );
+};
+
+Book.propTypes = {
+  category: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  chapter: PropTypes.string.isRequired,
+  progress: PropTypes.string.isRequired,
 };
 
 export default Book;
