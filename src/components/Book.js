@@ -1,5 +1,5 @@
 const Book = ( props ) => {
-    const { category, title, author, progress } = props;
+    const { category, title, author, progress, chapter } = props;
 
     return (
         <div className='book'>
@@ -16,13 +16,13 @@ const Book = ( props ) => {
             <div >
                 <div className="oval"/>
                 <div >
-                    <h3 >{progress}</h3>
-                    <p >completed</p>
+                    <h3 className="per-completed">{progress}</h3>
+                    <p className="completed">completed</p>
                 </div>
             </div>
             <div >
-                <p>CURRENT CHAPTER</p>
-                <p >Current</p>
+                <p className="current-chapter">CURRENT CHAPTER</p>
+                <p className="chapter">{chapter}</p>
                 <button type="button" className="progress-update">UPDATE PROGRESS</button>
             </div>
         </div>

@@ -1,6 +1,4 @@
-.App {
-
-}
+.App {}
 
 .App-logo {
   height: 40vmin;
@@ -36,40 +34,75 @@
 
 .nav {
   display: flex;
-width: 87.5rem;
-height: 5.938rem;
-margin: 0 0 2.375rem;
-padding: 1.438rem 6.188rem 1.688rem 6.25rem;
-background-color: var(--white-two);
+  width: 85%;
+  height: 0.938rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color: #ffffff;
 }
 
 .nav-items {
   display: flex;
 }
 
+.nav-items li {
+  margin: 0 12px;
+}
+
 .bookstore {
-  width: 90%;
-  height: 10%;
   margin: 0.375rem 2.938rem 0.125rem 0;
   font-family: Montserrat;
   font-size: 1.875rem;
   font-weight: bold;
+  font-style: normal;
+  color: #0290ff;
+}
+
+.per-completed {
+  width: 2.938rem;
+  height: 2.438rem;
+  margin: 0.063rem 7.063rem 0 0.688rem;
+  font-family: 'Montserrat' sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #0290ff;
+  color: #121212;
+}
+
+.completed {
+  width: 5rem;
+  height: 1.125rem;
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-family: 'Montserrat' sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.hr {
+  width: 75rem;
+  height: 0.125rem;
+  margin: 2.5rem 0.063rem 1.813rem 0;
+  border: solid 1px #e8e8e8;
 }
 
 .book {
   display: flex;
-  width: 75rem;
+  width: 85%;
   height: 10.625rem;
   margin: 2.313rem 6.25rem 0;
   padding: 2rem 9.188rem 1.625rem 1.688rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
-  background-color: #e8e8e8;
+  background-color: #ffffff;
 }
 
 li {
@@ -77,10 +110,10 @@ li {
 }
 
 .title {
-  width: 12.313rem;
+  width: 22.313rem;
   height: 1.813rem;
-  margin: 0.188rem 20.188rem 0 0;
-  font-family: RobotoSlab;
+  margin: 0.188rem 0.188rem 0 0;
+  font-family: 'RobotoSlab' sans-serif;
   font-size: 1.375rem;
   font-weight: bold;
   font-stretch: normal;
@@ -94,14 +127,14 @@ li {
   width: 6.688rem;
   height: 1.188rem;
   margin: 0.25rem 0 0;
-  font-family: RobotoSlab;
+  font-family: 'RobotoSlab' sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: ;
+  color: #4386bf;
 }
 
 .book-action {
@@ -109,29 +142,82 @@ li {
   width: 4.563rem;
   height: 1.188rem;
   margin: 0.188rem 0.938rem 0.125rem 0;
-  font-family: RobotoSlab;
+  font-family: 'RobotoSlab' sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: var(--cool-blue);
+  color: #4386bf;
+  position: relative;
+  right: 47px;
 }
 
-.progress-update {
-  width: 11.5rem;
+.book-action li {
+  margin: 8px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.progress-update, .addBook {
   height: 2.063rem;
   margin: 0.75rem 0 0.563rem 3.688rem;
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border-radius: 3px;
+  color: #ffffff;
   background-color: #0290ff;
+}
+
+.book-title, .book-author {
+margin: 12px;
+padding: 8px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+}
+
+.book-title {
+  width: 42%;
+}
+
+.current-chapter {
+  width: 7.875rem;
+  height: 1.125rem;
+  margin: 0.063rem 5.375rem 0 3.688rem;
+  opacity: 0.5;
+  font-family: 'RobotoSlab' sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.chapter {
+  width: 13.25rem;
+  height: 1.313rem;
+  margin: 0.438rem 0 0.25rem 3.688rem;
+  font-family: 'RobotoSlab' sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: var(--black-two);
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
