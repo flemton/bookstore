@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Books from './components/books';
+import { Books } from './components/Book';
 import Categories from './components/categories';
 import Layout from './components/Layout';
 
