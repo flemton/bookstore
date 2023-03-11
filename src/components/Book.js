@@ -1,9 +1,22 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { checkStatus, removeBook } from '../redux/books/booksSlice';
+import Form from './Form';
+import books from './books';
 
-const Book = (props) => {
-  const {
-    category, title, author, progress, chapter,
-  } = props;
+const Books = () => (
+  <div>
+    {books.map((book) => (
+      <Book title={book.title} category={book.category} author={book.author} progress="64%" chapter="Chapter 17" id={book.id} key={book.id} />
+    ))}
+    <Form />
+  </div>
+);
+
+const Book = ({
+  category, title, author, progress, chapter, id,
+}) => {
+  const dispatch = useDispatch();
 
   return (
     <div className="book">
@@ -13,8 +26,9 @@ const Book = (props) => {
         <p className="author">{author}</p>
         <ul className="book-action">
           <li>Comments</li>
-          <li>Remove</li>
+          <button type="button" onClick={() => dispatch(removeBook({ id }))}>Remove</button>
           <li>Edit</li>
+          <button type="button" className="status-btn" onClick={() => dispatch(checkStatus({ id }))}>Status</button>
         </ul>
       </div>
       <div>
@@ -39,6 +53,9 @@ Book.propTypes = {
   author: PropTypes.string.isRequired,
   chapter: PropTypes.string.isRequired,
   progress: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
+
+export { Books };
 
 export default Book;
