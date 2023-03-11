@@ -7,7 +7,7 @@ import books from './books';
 const Books = () => (
   <div>
     {books.map((book) => (
-      <Book title={book.title} category={book.category} author={book.author} progress="64%" chapter="Chapter 17" key={book.item_id} />
+      <Book title={book.title} category={book.category} author={book.author} progress="64%" chapter="Chapter 17" id={book.item_id} key={book.item_id} />
     ))}
     <Form />
   </div>

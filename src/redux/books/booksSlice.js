@@ -13,6 +13,7 @@ const booksSlice = createSlice({
   reducers: {
     addBook: (state, action) => {
       state.books.push(action.payload);
+      console.log(action.payload, action);
     },
     removeBook: (state, action) => ({
       books: state.books.filter((book) => book.item_id !== action.payload),
