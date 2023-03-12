@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { checkStatus, removeBook } from '../redux/books/booksSlice';
+import { removeBook } from '../redux/books/booksSlice';
 import Form from './Form';
 import books from './books';
 
 const Books = () => (
   <div>
     {books.map((book) => (
-      <Book title={book.title} category={book.category} author={book.author} progress="64%" chapter="Chapter 17" id={book.id} key={book.id} />
+      <Book title={book.title} category={book.category} author={book.author} progress="0%" chapter="Chapter 17" id={book.id} key={book.id} />
     ))}
+    <hr className="hr" />
     <Form />
   </div>
 );
@@ -26,19 +27,19 @@ const Book = ({
         <p className="author">{author}</p>
         <ul className="book-action">
           <li>Comments</li>
-          <button type="button" onClick={() => dispatch(removeBook({ id }))}>Remove</button>
+          <li><button type="button" onClick={() => dispatch(removeBook({ id }))}>Remove</button></li>
           <li>Edit</li>
-          <button type="button" className="status-btn" onClick={() => dispatch(checkStatus({ id }))}>Status</button>
         </ul>
       </div>
-      <div>
+      <div className="completion">
         <div className="oval" />
         <div>
           <h3 className="per-completed">{progress}</h3>
           <p className="completed">completed</p>
         </div>
       </div>
-      <div>
+      <hr className="hr-completed" />
+      <div className="current">
         <p className="current-chapter">CURRENT CHAPTER</p>
         <p className="chapter">{chapter}</p>
         <button type="button" className="progress-update">UPDATE PROGRESS</button>
