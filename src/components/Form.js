@@ -9,14 +9,16 @@ const Form = () => {
       <h3>
         ADD NEW BOOK
       </h3>
-      <form onSubmit={((e) => {
-        e.preventDefault();
-        const title = e.target[0].value;
-        const author = e.target[1].value;
-        dispatch(addBook({ id: uuidv4(), title, author }));
-        e.target[0].value = '';
-        e.target[1].value = '';
-      })}
+      <form
+        className="form-inputs"
+        onSubmit={((e) => {
+          e.preventDefault();
+          const title = e.target[0].value;
+          const author = e.target[1].value;
+          dispatch(addBook({ id: uuidv4(), title, author }));
+          e.target[0].value = '';
+          e.target[1].value = '';
+        })}
       >
         <input type="text" placeholder="Book title" required className="book-title" />
         <input type="text" placeholder="Author" required className="book-author" />
