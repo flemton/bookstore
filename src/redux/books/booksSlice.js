@@ -5,18 +5,18 @@ import {
 
 const booksURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/YTkkGNjFzdVaLfwvsjLv/books';
 const Bookss = [];
-
 export const booksDisplay = createAsyncThunk(
   'bookstore/books',
   async () => {
     const response = await fetch(booksURL);
     const data = await response.json();
+    const Bookss = [];
     Object.keys(data).forEach((ind) => {
       const each = {
         id: ind,
-        title: data[ind].title,
-        author: data[ind].author,
-        category: data[ind].category,
+        title: data[ind][0].title,
+        author: data[ind][0].author,
+        category: data[ind][0].category,
       };
       Bookss.push(each);
     });

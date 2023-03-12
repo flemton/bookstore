@@ -20,7 +20,7 @@ const Books = () => {
 };
 
 const Book = ({
-  category, title, author, progress, chapter, id,
+  category, title, author, id,
 }) => {
   const dispatch = useDispatch();
 
@@ -40,13 +40,13 @@ const Book = ({
       <div>
         <div className="oval" />
         <div>
-          <h3 className="per-completed">{progress}</h3>
+          <h3 className="per-completed">0%</h3>
           <p className="completed">completed</p>
         </div>
       </div>
       <div>
         <p className="current-chapter">CURRENT CHAPTER</p>
-        <p className="chapter">{chapter}</p>
+        <p className="chapter">Chapter</p>
         <button type="button" className="progress-update">UPDATE PROGRESS</button>
       </div>
     </div>
@@ -57,8 +57,6 @@ Book.propTypes = {
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  chapter: PropTypes.string.isRequired,
-  progress: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
 };
 
