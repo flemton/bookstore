@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { checkStatus, removeBook } from '../redux/books/booksSlice';
+import { removeBook } from '../redux/books/booksSlice';
 import Form from './Form';
 import books from './books';
 
@@ -28,7 +28,7 @@ const Book = ({
           <li>Comments</li>
           <button type="button" onClick={() => dispatch(removeBook({ id }))}>Remove</button>
           <li>Edit</li>
-          <button type="button" className="status-btn" onClick={() => dispatch(checkStatus({ id }))}>Status</button>
+          <button type="button" className="status-btn">Status</button>
         </ul>
       </div>
       <div>
