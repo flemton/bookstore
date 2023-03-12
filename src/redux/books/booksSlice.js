@@ -29,12 +29,13 @@ export const booksAdd = createAsyncThunk('bookstore/books/ADD_BOOK', async (book
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      id: book.id,
+      item_id: book.id,
       title: book.title,
       author: book.author,
       category: 'Fiction',
     }),
   });
+  console.log(book);
   return book;
 });
 
