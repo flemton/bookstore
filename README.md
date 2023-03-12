@@ -164,7 +164,7 @@ If you like this project, considering giving it a star
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank [Microverse](@microverseinc) for giving me this project to work on
+I would like to thank [Microverse](https://github.com/microverseinc) for giving me this project to work on
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
