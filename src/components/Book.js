@@ -1,17 +1,23 @@
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { booksDisplay, removeBook, Bookss } from '../redux/books/booksSlice';
 import Form from './Form';
-import books from './books';
 
-const Books = () => (
-  <div>
-    {books.map((book) => (
-      <Book title={book.title} category={book.category} author={book.author} progress="64%" chapter="Chapter 17" id={book.id} key={book.id} />
-    ))}
-    <Form />
-  </div>
-);
+const Books = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(booksDisplay());
+  }, [dispatch]);
+  return (
+    <div>
+      {Bookss.map((book) => (
+        <Book title={book.title} category={book.category} author={book.author} progress="64%" chapter="Chapter 17" id={book.id} key={book.id} />
+      ))}
+      <Form />
+    </div>
+  );
+};
 
 const Book = ({
   category, title, author, progress, chapter, id,

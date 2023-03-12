@@ -4,13 +4,13 @@ import {
 } from '@reduxjs/toolkit';
 
 const booksURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/YTkkGNjFzdVaLfwvsjLv/books';
+const Bookss = [];
 
-const booksDisplay = createAsyncThunk(
+export const booksDisplay = createAsyncThunk(
   'bookstore/books',
   async () => {
     const response = await fetch(booksURL);
-    const data = response.json;
-    const Bookss = [];
+    const data = await response.json();
     Object.keys(data).forEach((ind) => {
       const each = {
         id: ind,
@@ -68,5 +68,7 @@ const booksReducer = createSlice({
       ));
   },
 });
+
+export { Bookss };
 
 export default booksReducer;
