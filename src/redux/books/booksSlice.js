@@ -14,9 +14,9 @@ export const booksDisplay = createAsyncThunk(
     Object.keys(data).forEach((ind) => {
       const each = {
         id: ind,
-        title: data[ind][0].title,
-        author: data[ind][0].author,
-        category: data[ind][0].category,
+        title: data[ind].title,
+        author: data[ind].author,
+        category: data[ind].category,
       };
       Bookss.push(each);
     });
@@ -35,7 +35,6 @@ export const booksAdd = createAsyncThunk('bookstore/books/ADD_BOOK', async (book
       category: 'Fiction',
     }),
   });
-  console.log(book);
   return book;
 });
 
@@ -44,7 +43,7 @@ export const removeBook = createAsyncThunk('bookstore/books/DELETE', async (id) 
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      itemId: id,
+      item_id: id,
     }),
   });
   return id;
