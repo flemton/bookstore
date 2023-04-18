@@ -24,7 +24,7 @@ const booksSlice = createSlice({
       .addCase(removeBook.fulfilled, (state, action) => (
         {
           ...state,
-          book: state.books.filter((book) => book.key !== action.payload),
+          books: state.books.filter((id) => id !== action.payload),
         }
       ));
   },

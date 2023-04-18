@@ -7,10 +7,9 @@ import removeBook from './removeBook';
 const Books = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => (state.books.books));
-  console.log(books);
   useEffect(() => {
     dispatch(booksDisplay());
-  }, [dispatch]);
+  }, [books]);
 
   return (
     <div>
