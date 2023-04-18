@@ -1,65 +1,48 @@
-import PropTypes from 'prop-types';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { booksDisplay, removeBook, Bookss } from '../redux/books/booksSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import booksDisplay from './displayBooks';
 import Form from './Form';
 
 const Books = () => {
   const dispatch = useDispatch();
+  const books = useSelector((state) => (state.books.books));
+  console.log(books);
   useEffect(() => {
     dispatch(booksDisplay());
-  }, [dispatch]);
+  }, []);
+
   return (
     <div>
-      {Bookss.map((book) => (
-        <Book title={book.title} category={book.category} author={book.author} progress="64%" chapter="Chapter 17" id={book.id} key={book.id} />
+      {books.map((book) => (
+        <div className="book" key={book.key}>
+          <div className="book-details">
+            <p>{book.category}</p>
+            <h2 className="title">{book.title}</h2>
+            <p className="author">{book.author}</p>
+            <ul className="book-action">
+              <li>Comments</li>
+              <button type="button" id={book.id}>Remove</button>
+              <li>Edit</li>
+              <button type="button" className="status-btn">Status</button>
+            </ul>
+          </div>
+          <div>
+            <div className="oval" />
+            <div>
+              <h3 className="per-completed">0%</h3>
+              <p className="completed">completed</p>
+            </div>
+          </div>
+          <div>
+            <p className="current-chapter">CURRENT CHAPTER</p>
+            <p className="chapter">Chapter</p>
+            <button type="button" className="progress-update">UPDATE PROGRESS</button>
+          </div>
+        </div>
       ))}
       <Form />
     </div>
   );
 };
 
-const Book = ({
-  category, title, author, id,
-}) => {
-  const dispatch = useDispatch();
-
-  return (
-    <div className="book">
-      <div className="book-details">
-        <p>{category}</p>
-        <h2 className="title">{title}</h2>
-        <p className="author">{author}</p>
-        <ul className="book-action">
-          <li>Comments</li>
-          <button type="button" onClick={() => dispatch(removeBook({ id }))}>Remove</button>
-          <li>Edit</li>
-          <button type="button" className="status-btn">Status</button>
-        </ul>
-      </div>
-      <div>
-        <div className="oval" />
-        <div>
-          <h3 className="per-completed">0%</h3>
-          <p className="completed">completed</p>
-        </div>
-      </div>
-      <div>
-        <p className="current-chapter">CURRENT CHAPTER</p>
-        <p className="chapter">Chapter</p>
-        <button type="button" className="progress-update">UPDATE PROGRESS</button>
-      </div>
-    </div>
-  );
-};
-
-Book.propTypes = {
-  category: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-};
-
-export { Books };
-
-export default Book;
+export default Books;

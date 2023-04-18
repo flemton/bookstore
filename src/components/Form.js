@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { booksAdd } from '../redux/books/booksSlice';
+import booksAdd from './AddBook';
 
 const Form = () => {
   const dispatch = useDispatch();
