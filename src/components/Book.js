@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import booksDisplay from './displayBooks';
 import Form from './Form';
+import removeBook from './removeBook';
 
 const Books = () => {
   const dispatch = useDispatch();
@@ -9,7 +10,7 @@ const Books = () => {
   console.log(books);
   useEffect(() => {
     dispatch(booksDisplay());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
@@ -21,7 +22,7 @@ const Books = () => {
             <p className="author">{book.author}</p>
             <ul className="book-action">
               <li>Comments</li>
-              <button type="button" id={book.id}>Remove</button>
+              <button type="button" id={book.key} onClick={() => dispatch(removeBook(book.key))}>Remove</button>
               <li>Edit</li>
               <button type="button" className="status-btn">Status</button>
             </ul>
