@@ -24,37 +24,50 @@
   color: #61dafb;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: #f5f6fa;
+body {
+  width: 100vw;
+  height: 100%;
+  padding: 0 0 120px;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
 }
 
 .nav {
   display: flex;
-  width: 100%;
-  height: 46px;
-  margin: 0 0 32px;
-  padding: 30px 0 30px 50px;
+  width: 100vw;
+  padding: 14px 0 16px 0;
   background-color: #fff;
+  margin-bottom: 25px;
+  border-bottom: solid 1px #e8e8e8;
 }
 
 .nav-items {
   display: flex;
 }
 
-li {
+li,
+a {
   list-style: none;
+  text-decoration: none;
 }
 
 .nav-items li {
+  display: flex;
   margin: 0 12px;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.7px;
+  color: #121212;
 }
 
 .oval {
-  width: 4.25rem;
-  height: 4.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
   border: solid 5px #e8e8e8;
   border-radius: 40px;
 }
@@ -107,14 +120,15 @@ li {
   width: 0.1px;
   height: 74px;
   position: relative;
-  margin: 45px 0;
+  margin: 13px 0;
+  border: solid 0.1px #e8e8e8;
 }
 
-.hr {
-  width: 67.5rem;
-  margin: 30px 0;
-  border: solid 1px #e8e8e8;
-  margin-left: 55px;
+.hr-addbook {
+  width: 86.4%;
+  height: 0.1px;
+  margin: 30px 54px 0;
+  border: solid 0.1px #e8e8e8;
 }
 
 .current {
@@ -126,14 +140,27 @@ li {
 .book {
   display: flex;
   width: 85%;
-  height: 10.625rem;
-  margin: 24px 50px;
-  margin-right: 0;
-  padding: 20px 34px;
-  padding-right: 0;
+  height: 130px;
+  margin: 12px 54px 0;
+  padding: 26px 0 0 16px;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #fff;
+}
+
+.book-category {
+  margin: 0 26px 0 0;
+  width: 3.063rem;
+  height: 1.125rem;
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
 }
 
 .book-details {
@@ -143,15 +170,15 @@ li {
 .title {
   width: 22.313rem;
   height: 1.813rem;
-  margin: 0.188rem 0.188rem 0 0;
-  font-family: sans-serif;
+  margin: 0;
+  font-family: RobotoSlab, sans-serif;
   font-size: 1.375rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.2px;
-  color: var(--black-two);
+  color: #121212;
 }
 
 .author {
@@ -172,7 +199,7 @@ li {
   display: flex;
   width: 4.563rem;
   height: 1.188rem;
-  margin: 0.188rem 0.938rem 0.125rem 0;
+  margin: 12px 0 0;
   font-family: sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
@@ -224,10 +251,40 @@ li:hover {
 
 .form h3 {
   padding-left: 12px;
+  width: 10.875rem;
+  height: 1.5rem;
+  margin: 1.813rem 32.75rem 1.188rem 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
 }
 
 .form-inputs {
   display: flex;
+}
+
+.per-div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.progress-update {
+  width: 11.5rem;
+  height: 2.063rem;
+  margin: 0.75rem 0 0.563rem 3.688rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  border: solid 1px #e8e8e8;
+}
+
+.addBook {
+  border: solid 1px #e8e8e8;
 }
 
 .progress-update,
@@ -242,7 +299,7 @@ li:hover {
 
 .book-title,
 .book-author {
-  margin: 12px;
+  margin: 7px;
   padding: 8px;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
