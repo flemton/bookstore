@@ -1,18 +1,18 @@
 const books = [
   {
-    id: 'item1',
+    key: 'item1',
     title: 'The Great Gatsby',
     author: 'John Smith',
     category: 'Fiction',
   },
   {
-    id: 'item2',
+    key: 'item2',
     title: 'Anna Karenina',
     author: 'Leo Tolstoy',
     category: 'Fiction',
   },
   {
-    id: 'item3',
+    key: 'item3',
     title: 'The Selfish Gene',
     author: 'Richard Dawkins',
     category: 'Nonfiction',

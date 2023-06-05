@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/booksSlice';
+import booksAdd from './AddBook';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const Form = () => {
         e.preventDefault();
         const title = e.target[0].value;
         const author = e.target[1].value;
-        dispatch(addBook({ id: uuidv4(), title, author }));
+        dispatch(booksAdd({ id: uuidv4(), title, author }));
         e.target[0].value = '';
         e.target[1].value = '';
       })}
