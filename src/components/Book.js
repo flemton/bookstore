@@ -16,7 +16,7 @@ const Books = () => {
       {books.map((book) => (
         <div className="book" key={book.key}>
           <div className="book-details">
-            <p>{book.category}</p>
+            <p className="book-category">{book.category}</p>
             <h2 className="title">{book.title}</h2>
             <p className="author">{book.author}</p>
             <ul className="book-action">
@@ -25,20 +25,22 @@ const Books = () => {
               <li>Edit</li>
             </ul>
           </div>
-          <div>
+          <div className="per-div">
             <div className="oval" />
             <div>
               <h3 className="per-completed">0%</h3>
-              <p className="completed">completed</p>
+              <p className="completed">Completed</p>
             </div>
           </div>
-          <div>
+          <hr className="hr-completed" />
+          <div className="chapter-div">
             <p className="current-chapter">CURRENT CHAPTER</p>
             <p className="chapter">Chapter</p>
             <button type="button" className="progress-update">UPDATE PROGRESS</button>
           </div>
         </div>
       ))}
+      <hr className="hr-addbook" />
       <Form />
     </div>
   );
